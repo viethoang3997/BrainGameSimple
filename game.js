@@ -30,11 +30,11 @@ let questions = [
     }
 ]
 
-renderQuestion(0);
+renderQuestion();
 
 setTimeRemaining();
 
-function renderQuestion(index) {
+function renderQuestion(index = 0) {
    document.getElementById('question').textContent = 'Question: ' + questions[index]['question'] ;
    let answer = '';
    questions[index]['choice'].forEach(value => {
@@ -63,9 +63,11 @@ function nextAnswer(index)
 {
     time = 10;
     if (index == questions.length) {
-        alert('Bạn đã hoàn thành đầy đủ các câu trả lời');
+        alert('Bạn đã hoàn thành đầy đủ lượt câu hỏi đầu tiên');
+        renderQuestion();
     }
     renderQuestion(index);
+    setCorrect();
     document.getElementById('correct').removeAttribute("style");
 }
 
@@ -102,9 +104,18 @@ function setResetGame() {
 }
 
 function setCorrect() {
-    localStorage.setItem('score', score);
+    let temp = getCorrect();
+    if(score > temp) {
+        localStorage.setItem('score', score)
+    }
 }
 
 function getCorrect() {
-    let maxScore = localStorage.get('score'); 
+    let maxScore = localStorage.getItem('score');
+    return maxScore;
+}
+
+function highScore() {
+    max = getCorrect();
+    alert(max);
 }
