@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizzPage</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="game.js"></script> 
+</head>
+<body>
+    <div class="quizz-index container">
+        <video playsinline autoplay muted loop>
+            <source src="videobg.mp4" type="video/mp4">
+        </video>
+        <div id ="correct" class="quizz-correct">Correct</div>
+        <div class="quizz-time" id="quizzScore">Score:</div>
+        <div class="quizz-question">
+            <p class="quizz-name row" id="question"></p>
+            <div class="quizz-answer row" id="quizzAnswer"></div>
+        </div>
+        <div class="quizz-controls">
+            <button class="quizz-reset center input" id="quizzReset" onclick="setResetGame()">Reset Game</button>
+        </div>
+        <div class="quizz-time" id="quizzTime">Time remaining: 10</div> 
+        <div class="game-over" id="gameOver"></div>
+    </div>
+</body>
+</html>
