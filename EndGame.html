@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EndGame</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="game.js"></script>
+</head>
+<body>
+    <div class="container">
+        <video playsinline autoplay muted loop>
+            <source src="videobg.mp4" type="video/mp4">
+        </video>
+        <div class="end-game" id="endGame">
+            <h1 id="finalScore" class="game-ready" style="margin-bottom: -5px;">0</h1>
+            <form class="end-form">
+                <h2 class="end-name">Enter your name below to save your score!</h2>
+                <input type="text" class="end-input" name="name" id="username">
+                <button class="btn" id="saveScoreBtn" type="submit" onclick="">Save</button>
+            </form>
+            <a href="Game.html" class="btn">Play Again</a>
+            <a href="Quiz.html" class="btn">Go Home<i class="fas fa-home"></i></a>
+        </div>
+    </div>
+</body>
+</html>
