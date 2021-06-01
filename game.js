@@ -71,7 +71,6 @@ function nextAnswer(index)
     document.getElementById('correct').removeAttribute("style");
 }
 
-
 function setScore(val = 0) {
     score = val == 0 ? 0 : score+val;
     document.getElementById('quizzScore').innerHTML = 'Score: '+score;
@@ -98,9 +97,14 @@ function setTimeRemaining() {
 function setResetGame() {
     time = 10;
     setTimeRemaining();
-    renderQuestion(0);
+    renderQuestion();
     setScore();
     document.getElementById('gameOver').removeAttribute('style', 'display:none');
+}
+
+function getCorrect() {
+    let maxScore = localStorage.getItem('score');
+    return maxScore;
 }
 
 function setCorrect() {
@@ -110,12 +114,7 @@ function setCorrect() {
     }
 }
 
-function getCorrect() {
-    let maxScore = localStorage.getItem('score');
-    return maxScore;
-}
-
 function highScore() {
-    max = getCorrect();
-    alert(max);
+    highScore = getCorrect();
+    alert('Điểm số cao nhất là: '+ highScore);
 }
