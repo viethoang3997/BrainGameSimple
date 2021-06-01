@@ -152,6 +152,7 @@ video {
     font-size: 16px;
     display: none;
 }
+
 .game-over {
     color: red;
     background-color: rgba(255, 206, 77, 0.7);
@@ -161,3 +162,4 @@ video {
     position: absolute;
     display: none;
 }
+
