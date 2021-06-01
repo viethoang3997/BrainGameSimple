@@ -67,7 +67,6 @@
       setCorrect();
       document.getElementById('gameOver').setAttribute('style', 'display:block');
       document.getElementById('gameOver').innerHTML='GAME OVER!<br>YOUR SCORE IS '+score;
-      setTimeRemaining();
     }
     
     function setTimeRemaining() {
